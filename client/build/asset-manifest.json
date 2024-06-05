@@ -19,7 +19,7 @@
     "static/js/75.6297708d.chunk.js": "./static/js/75.6297708d.chunk.js",
     "static/js/86.68d89771.chunk.js": "./static/js/86.68d89771.chunk.js",
     "static/js/774.9b2fcb8f.chunk.js": "./static/js/774.9b2fcb8f.chunk.js",
-    "static/css/187.1d88a088.chunk.css": "/static/css/187.1d88a088.chunk.css",
+    "static/css/187.1d88a088.chunk.css": "./static/css/187.1d88a088.chunk.css",
     "static/js/187.93b83b16.chunk.js": "./static/js/187.93b83b16.chunk.js",
     "static/js/953.2e2963d6.chunk.js": "./static/js/953.2e2963d6.chunk.js",
     "static/js/707.61ac2cf9.chunk.js": "./static/js/707.61ac2cf9.chunk.js",
@@ -47,7 +47,7 @@
     "static/js/134.9e31ca91.chunk.js": "./static/js/134.9e31ca91.chunk.js",
     "static/js/181.a6523651.chunk.js": "./static/js/181.a6523651.chunk.js",
     "static/media/chairoon.ico": "./static/media/chairoon.81ddbb9bc976b73ec35f.ico",
-    "index.html": "index.html",
+    "index.html": "./index.html",
     "main.86dbfdf7.js.map": "./static/js/main.86dbfdf7.js.map",
     "478.d60bed7c.chunk.js.map": "./static/js/478.d60bed7c.chunk.js.map",
     "876.18e75e2a.chunk.js.map": "./static/js/876.18e75e2a.chunk.js.map",
@@ -95,7 +95,5 @@
     "134.9e31ca91.chunk.js.map": "./static/js/134.9e31ca91.chunk.js.map",
     "181.a6523651.chunk.js.map": "./static/js/181.a6523651.chunk.js.map"
   },
-  "entrypoints": [
-    "./static/js/main.86dbfdf7.js"
-  ]
+  "entrypoints": ["./static/js/main.86dbfdf7.js"]
 }
