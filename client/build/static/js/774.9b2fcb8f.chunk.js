@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkchat=self.webpackChunkchat||[]).push([[774],{48774:(e,s,a)=>{a.r(s),a.d(s,{default:()=>t});a(65043);var c=a(70579);const t=()=>(0,c.jsx)("div",{children:"PagePostId"})}}]);
+//# sourceMappingURL=774.9b2fcb8f.chunk.js.map

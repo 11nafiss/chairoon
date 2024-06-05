@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkchat=self.webpackChunkchat||[]).push([[718],{63718:(e,s,a)=>{a.r(s),a.d(s,{default:()=>t});a(65043);var c=a(70579);const t=()=>(0,c.jsx)("div",{children:"PageQuest"})}}]);
+//# sourceMappingURL=718.617bee98.chunk.js.map
