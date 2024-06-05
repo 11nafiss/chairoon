@@ -43,12 +43,12 @@ app.use(
 );
 
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(helmet({ crossOriginEmbedderPolicy: false, originAgentCluster: true }));
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      "img-src": ["'self'", "https: data:"],
+      "img-src": ["'self'", "https: data: blob:"],
     },
   })
 );
