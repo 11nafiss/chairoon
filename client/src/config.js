@@ -7,8 +7,11 @@ import { PATH_DEFAULT } from "./routes/paths";
 export const PATH_FRONT = PATH_DEFAULT.general.front; // as '/app'
 export const PATH_HOME = PATH_DEFAULT.general.home; // as '/app'
 
-export const BASE_URL = "http://localhost:1000";
-export const CLIENT_URL = "http://localhost:3000";
+// export const BASE_URL = "http://localhost:1000";
+// export const CLIENT_URL = "http://localhost:3000";
+
+export const BASE_URL = "https://api-chairoon.vercel.app";
+export const CLIENT_URL = "https://chairoon.vercel.app";
 
 export const S3_BUCKET_NAME = 'codingmonk';
 export const AWS_ACCESS_KEY = 'AKIARPJQ4HSYLBIK2TDE';

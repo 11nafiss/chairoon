@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 corsConfig = {
-  origin: `*`,
+  origin: `${process.env.CLIENT_URL}`,
   methods: ["GET", "PATCH", "POST", "DELETE", "PUT"],
   credentials: true, //
   //   Access-Control-Allow-Credentials is a header that, when set to true , tells browsers to expose the response to the frontend JavaScript code. The credentials consist of cookies, authorization headers, and TLS client certificates.
@@ -63,9 +63,13 @@ app.use(
   })
 ); // Returns middleware that only parses urlencoded bodies
 
+// app.get("/", (req, res) => {
+//   app.use(express.static(path.join(__dirname, "client", "build")));
+//   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+// });
+
 app.get("/", (req, res) => {
-  app.use(express.static(path.join(__dirname, "client", "build")));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.json("Server is Running");
 });
 
 app.use(mongosanitize());

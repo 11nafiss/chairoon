@@ -21,7 +21,7 @@ $ npm start
 
 ```sh
 PORT="your backend port number || 3001"
-FE_URL="your backend port url || http://localhost:3000"
+CLIENT_URL="your frontend port url || http://localhost:3000"
 DATABASE_PASSWORD="your database password"
 DATABASE="your database url"
 JWT_SECRET="your jwt secret"
