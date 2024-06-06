@@ -7,7 +7,7 @@ import {
   FetchUserMe,
   showSnackbar,
 } from "../../redux/slices/app";
-// import { socket, connectSocket } from "../../socket";
+import { socket, connectSocket } from "../../socket";
 
 const LayoutHome = () => {
   const dispatch = useDispatch();
@@ -29,42 +29,42 @@ const LayoutHome = () => {
 
       window.onload();
 
-      // if (!socket) {
-      //   connectSocket(user_id);
-      // }
+      if (!socket) {
+        connectSocket(user_id);
+      }
 
 
-      // socket.on("new_friend_request", (data) => {
-      //   dispatch(
-      //     showSnackbar({
-      //       severity: "success",
-      //       message: "New friend request received",
-      //     })
-      //   );
-      // });
+      socket.on("new_friend_request", (data) => {
+        dispatch(
+          showSnackbar({
+            severity: "success",
+            message: "New friend request received",
+          })
+        );
+      });
 
-      // socket.on("request_accepted", (data) => {
-      //   dispatch(
-      //     showSnackbar({
-      //       severity: "success",
-      //       message: "Friend Request Accepted",
-      //     })
-      //   );
-      // });
+      socket.on("request_accepted", (data) => {
+        dispatch(
+          showSnackbar({
+            severity: "success",
+            message: "Friend Request Accepted",
+          })
+        );
+      });
 
-      // socket.on("request_sent", (data) => {
-      //   dispatch(showSnackbar({ severity: "success", message: data.message }));
-      // });
+      socket.on("request_sent", (data) => {
+        dispatch(showSnackbar({ severity: "success", message: data.message }));
+      });
     }
 
     // Remove event listener on component unmount
     return () => {
-      // socket?.off("new_friend_request");
-      // socket?.off("request_accepted");
-      // socket?.off("request_sent");
-      // socket?.off("start_chat");
-      // socket?.off("new_message");
-      // socket?.off("audio_call_notification");
+      socket?.off("new_friend_request");
+      socket?.off("request_accepted");
+      socket?.off("request_sent");
+      socket?.off("start_chat");
+      socket?.off("new_message");
+      socket?.off("audio_call_notification");
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
