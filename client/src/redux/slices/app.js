@@ -158,12 +158,6 @@ export const FetchUserMe = () => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${getState().auth.token}`,
-          mode: "cors",
-          cache: "no-cache",
-          credentials: "same-origin",
-          headers: {
-            "content-type": "application/json",
-          },
         },
       })
       .then((response) => {
@@ -299,7 +293,9 @@ export function FetchFriendRequests() {
       )
       .then((response) => {
         console.log(response);
-        dispatch(slice.actions.updateFriendRequests({ requests: response.data.data }));
+        dispatch(
+          slice.actions.updateFriendRequests({ requests: response.data.data })
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -324,7 +320,9 @@ export const FetchCallLogs = () => {
       })
       .then((response) => {
         console.log(response);
-        dispatch(slice.actions.fetchCallLogs({ call_logs: response.data.data }));
+        dispatch(
+          slice.actions.fetchCallLogs({ call_logs: response.data.data })
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -335,12 +333,16 @@ export const FetchCallLogs = () => {
 export const UpdateUserProfile = (formValues) => {
   return async (dispatch, getState) => {
     axios
-      .patch("/user/update-me", formValues, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .patch(
+        "/user/update-me",
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.updateCurrentUser({ currentUser: response.data.data }));
@@ -411,12 +413,16 @@ export const FetchQuestMine = ({ userId }) => {
 export const CreateRequestsJob = (formValues) => {
   return async (dispatch, getState) => {
     axios
-      .post(`/quest/create-job`, formValues, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .post(
+        `/quest/create-job`,
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.updateJob({ job: response.data.data }));
@@ -430,12 +436,16 @@ export const CreateRequestsJob = (formValues) => {
 export const UpdateRequestsJob = (formValues) => {
   return async (dispatch, getState) => {
     axios
-      .patch(`/quest/update-job/${formValues._id}`, formValues, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .patch(
+        `/quest/update-job/${formValues._id}`,
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.updateJob({ job: response.data.result }));
@@ -449,12 +459,15 @@ export const UpdateRequestsJob = (formValues) => {
 export const DeleteRequestsJob = ({ questId }) => {
   return async (dispatch, getState) => {
     axios
-      .delete(`/quest/delete-job/${questId}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .delete(
+        `/quest/delete-job/${questId}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .catch((err) => {
         console.log(err);
       });
@@ -464,12 +477,16 @@ export const DeleteRequestsJob = ({ questId }) => {
 export const CreateActivitiesJob = (formValues) => {
   return async (dispatch, getState) => {
     axios
-      .post(`/apply/new-job`, formValues, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .post(
+        `/apply/new-job`,
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.updateApplyJob({ applyJob: response.data.result }));
@@ -480,15 +497,18 @@ export const CreateActivitiesJob = (formValues) => {
   };
 };
 
-export const FetchRecruitersJob = ({ userId }) => {
+export const FetchRecruitersJob = ({userId}) => {
   return async (dispatch, getState) => {
     axios
-      .get(`/apply/get-recruiter-jobs/${userId}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .get(
+        `/apply/get-recruiter-jobs/${userId}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.fetchUserApplieds({ userApplieds: response.data.result }));
@@ -499,15 +519,18 @@ export const FetchRecruitersJob = ({ userId }) => {
   };
 };
 
-export const FetchApplicantsJob = ({ userId }) => {
+export const FetchApplicantsJob = ({userId}) => {
   return async (dispatch, getState) => {
     axios
-      .get(`/apply/get-applicant-jobs/${userId}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .get(
+        `/apply/get-applicant-jobs/${userId}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.fetchUserApplieds({ userApplieds: response.data.result }));
@@ -521,12 +544,16 @@ export const FetchApplicantsJob = ({ userId }) => {
 export const UpdateAppliedsJob = (formValues) => {
   return async (dispatch, getState) => {
     axios
-      .patch(`/apply/update-applied/${formValues._id}`, formValues, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getState().auth.token}`,
-        },
-      })
+      .patch(
+        `/apply/update-applied/${formValues._id}`,
+        formValues,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch(slice.actions.updateApplyJob({ applyJob: response.data.result }));
