@@ -102,8 +102,8 @@ const PageProfile = () => {
                 >
                   <TextTitle>{`${user?.firstName} ${user?.lastName}`}</TextTitle>
                   <StackRow gap={2}>
-                    <TextBody>{`${user.followers.length} Followers`}</TextBody>
-                    <TextBody>{`${user.following.length} Following`}</TextBody>
+                    <TextBody>{`0 Followers`}</TextBody>
+                    <TextBody>{`0 Following`}</TextBody>
                   </StackRow>
                 </StackCol>
                 {currentUser._id === user._id ? (
