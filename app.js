@@ -25,12 +25,15 @@ app.options("", cors(corsConfig));
 
 app.use(cookieParser());
 
-app.use((req,res,next)=>{
-  res.setHeader('Access-Control-Allow-Origin',`${process.env.CLIENT_URL}`);
-  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-  next(); 
-})
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`);
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 // Setup express response and body parser configurations
 app.use(express.json({ limit: "100kb" })); // Controls the maximum request body size. If this is a number, then the value specifies the number of bytes; if it is a string, the value is passed to the bytes library for parsing. Defaults to '100kb'.

@@ -10,6 +10,10 @@ const io = new Server(server, {
     origin: `${process.env.CLIENT_URL}`,
     methods: ["GET,POST,DELETE,PUT,PATCH"],
   },
+  forceNewConnection: true,
+  reconnectionAttempts: "Infinity",
+  timeout: 10000,
+  transports: ["websocket"],
 });
 
 module.exports = server;
@@ -33,7 +37,6 @@ io.on("connection", async (socket) => {
     }
   }
 
-  
   // We can write our socket event listeners in here...
   socket.on("friend_request", async (data) => {
     const to = await User.findById(data.to).select("socket_id");
@@ -131,9 +134,9 @@ io.on("connection", async (socket) => {
 
   socket.on("get_messages", async (data, callback) => {
     try {
-      const { messages } = await OneToOneMessage.findById(
-        data.conversation_id
-      ).select("messages");
+      const { messages } = await OneToOneMessage.findById(data.conversation_id).select(
+        "messages"
+      );
       callback(messages);
     } catch (error) {
       console.log(error);
@@ -191,9 +194,7 @@ io.on("connection", async (socket) => {
     const fileExtension = path.extname(data.file.name);
 
     // Generate a unique filename
-    const filename = `${Date.now()}_${Math.floor(
-      Math.random() * 10000
-    )}${fileExtension}`;
+    const filename = `${Date.now()}_${Math.floor(Math.random() * 10000)}${fileExtension}`;
 
     // upload file to AWS s3
 
