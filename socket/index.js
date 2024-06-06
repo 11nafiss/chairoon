@@ -9,11 +9,10 @@ const io = new Server(server, {
   cors: {
     origin: `${process.env.CLIENT_URL}`,
     methods: ["GET,POST,DELETE,PUT,PATCH"],
+    credentials: true
   },
-  forceNewConnection: true,
-  reconnectionAttempts: "Infinity",
-  timeout: 10000,
-  transports: ["websocket"],
+  transports: ['websocket', 'polling'],
+  allowEIO3: true
 });
 
 module.exports = server;
