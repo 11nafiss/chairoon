@@ -6,6 +6,9 @@ This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go che
 
 - Clone or download `this project folder` and then unzip the files.
 
+## For Frontend
+Go to "client" folder then read README.md for more information.
+
 ## For Backend
 Follow the command to run the client site:
 - Install all necessary code packages.  

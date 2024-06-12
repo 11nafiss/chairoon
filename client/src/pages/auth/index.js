@@ -68,7 +68,7 @@ const PageLogin = () => {
             sx={{
               width: "400px",
               padding: "20px",
-              backdropFilter: "brightness(60%)",
+              backdropFilter: "brightness(70%)",
               borderRadius: "25px",
             }}
           >
