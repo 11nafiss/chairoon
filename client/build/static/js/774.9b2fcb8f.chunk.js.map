@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/774.9b2fcb8f.chunk.js","mappings":"kJAEA,MAIA,EAJmBA,KACVC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,c","sources":["pages/user/post/One.js"],"sourcesContent":["import React from \"react\";\r\n\r\nconst PagePostId = () => {\r\n  return <div>PagePostId</div>;\r\n};\r\n\r\nexport default PagePostId;\r\n"],"names":["PagePostId","_jsx","children"],"sourceRoot":""}

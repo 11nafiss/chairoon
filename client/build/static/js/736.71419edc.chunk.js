@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkchat=self.webpackChunkchat||[]).push([[736],{52736:(e,a,c)=>{c.r(a),c.d(a,{default:()=>h});c(65043);var s=c(70579);const h=()=>(0,s.jsx)("div",{children:"PageLogin"})}}]);
-//# sourceMappingURL=736.71419edc.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkchat=self.webpackChunkchat||[]).push([[535],{96535:(s,a,e)=>{e.r(a),e.d(a,{default:()=>h});e(65043);var c=e(70579);const h=()=>(0,c.jsx)("div",{children:"PageDashAdmins"})}}]);
-//# sourceMappingURL=535.21787a37.chunk.js.map
